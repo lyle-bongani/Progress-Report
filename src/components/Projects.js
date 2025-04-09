@@ -25,6 +25,12 @@ const ProjectCard = styled(Card)`
   &:hover::before {
     opacity: 1;
   }
+  
+  @media (max-width: 480px) {
+    &:hover::before {
+      opacity: 0;
+    }
+  }
 `;
 
 const ProjectHeader = styled.div`
@@ -32,6 +38,11 @@ const ProjectHeader = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 1rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const ProjectInfo = styled.div`
@@ -46,16 +57,28 @@ const ProjectStatus = styled.div`
   font-weight: 500;
   background: ${props => props.status === 'Completed' ? '#10B98120' : '#6366F120'};
   color: ${props => props.status === 'Completed' ? '#10B981' : '#6366F1'};
+  
+  @media (max-width: 480px) {
+    align-self: flex-start;
+  }
 `;
 
 const ProjectDescription = styled.p`
   margin: 1rem 0;
   line-height: 1.6;
   color: #64748B;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const TechStack = styled.div`
   margin: 1.5rem 0;
+  
+  @media (max-width: 480px) {
+    margin: 1.25rem 0;
+  }
 `;
 
 const TechLabel = styled.div`
@@ -69,6 +92,11 @@ const TechLabel = styled.div`
   svg {
     color: #6366F1;
   }
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const ProjectLinks = styled.div`
@@ -77,6 +105,11 @@ const ProjectLinks = styled.div`
   margin-top: auto;
   padding-top: 1.5rem;
   border-top: 1px solid #E2E8F0;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    padding-top: 1.25rem;
+  }
 `;
 
 const LinkButton = styled.a`
@@ -89,6 +122,7 @@ const LinkButton = styled.a`
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  justify-content: center;
   
   ${props => props.primary ? `
     background: linear-gradient(135deg, #6366F1, #10B981);
@@ -107,6 +141,14 @@ const LinkButton = styled.a`
       transform: translateY(-2px);
     }
   `}
+  
+  @media (max-width: 480px) {
+    width: 100%;
+    
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 
 const Projects = () => {

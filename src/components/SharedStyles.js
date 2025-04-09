@@ -66,6 +66,16 @@ export const Section = styled.section`
   &:hover {
     transform: translateY(-2px);
   }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -81,16 +91,34 @@ export const SectionTitle = styled.h2`
     color: ${colors.primary};
     font-size: 1.5rem;
   }
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 1.25rem;
   }
 `;
 
@@ -123,6 +151,18 @@ export const Card = styled.div`
       opacity: 1;
     }
   }
+  
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+    
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 
 export const CardTitle = styled.h3`
@@ -130,12 +170,24 @@ export const CardTitle = styled.h3`
   font-weight: 600;
   color: ${colors.text.primary};
   margin-bottom: 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const CardContent = styled.div`
   color: ${colors.text.secondary};
   font-size: 0.95rem;
   line-height: 1.6;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Tag = styled.span`
@@ -153,6 +205,11 @@ export const Tag = styled.span`
   
   &:hover {
     background: ${colors.primary}25;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -176,6 +233,19 @@ export const Button = styled.button`
   
   svg {
     font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.25rem;
+  }
+  
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    
+    &:hover {
+      transform: none;
+    }
   }
 `;
 

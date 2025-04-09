@@ -24,6 +24,14 @@ const GoalCard = styled(Card)`
     border-radius: 4px;
     opacity: ${props => props.completed ? 1 : 0.7};
   }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.25rem;
+  }
 `;
 
 const GoalHeader = styled.div`
@@ -31,6 +39,11 @@ const GoalHeader = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const GoalTitle = styled.h3`
@@ -39,6 +52,14 @@ const GoalTitle = styled.h3`
   color: ${colors.text.primary};
   margin-bottom: 0.5rem;
   padding-left: 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const GoalDescription = styled.p`
@@ -47,6 +68,11 @@ const GoalDescription = styled.p`
   line-height: 1.6;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
 `;
 
 const GoalStatus = styled.div`
@@ -61,11 +87,24 @@ const GoalStatus = styled.div`
   svg {
     font-size: 1.1rem;
   }
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    
+    svg {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const ProgressContainer = styled.div`
   margin-top: auto;
   padding-left: 1rem;
+  
+  @media (max-width: 480px) {
+    padding-left: 0.75rem;
+  }
 `;
 
 const ProgressHeader = styled.div`
@@ -73,6 +112,10 @@ const ProgressHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const ProgressLabel = styled.div`
@@ -81,12 +124,20 @@ const ProgressLabel = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const ProgressValue = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
   color: ${props => props.completed ? colors.secondary : colors.primary};
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const ProgressBarContainer = styled.div`
@@ -119,6 +170,12 @@ const DueDate = styled.div`
   
   svg {
     color: ${colors.text.light};
+  }
+  
+  @media (max-width: 480px) {
+    position: static;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
   }
 `;
 

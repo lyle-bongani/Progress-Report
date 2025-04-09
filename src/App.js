@@ -54,12 +54,16 @@ const Sidebar = styled.div`
   padding: 2rem 0;
   position: fixed;
   height: 100vh;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 10;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     transform: translateX(${props => props.isOpen ? '0' : '-100%'});
+  }
+  
+  @media (max-width: 768px) {
     width: 80%;
+    max-width: 300px;
   }
 `;
 
@@ -119,10 +123,20 @@ const MainContent = styled.main`
   min-height: 100vh;
   transition: all 0.3s ease;
   
+  @media (max-width: 1024px) {
+    padding: 2.5rem 3rem;
+    padding-top: 8rem;
+  }
+  
   @media (max-width: 768px) {
     margin-left: 0;
     padding: 2rem;
-    padding-top: 8rem;
+    padding-top: 7rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    padding-top: 6rem;
   }
 `;
 
@@ -151,9 +165,17 @@ const Header = styled.header`
     background: linear-gradient(90deg, ${colors.primary}20, transparent);
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    padding: 2rem 3rem;
     left: 0;
-    padding: 2rem 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.25rem 1.5rem;
   }
 `;
 
@@ -176,6 +198,14 @@ const Title = styled.h1`
     background: linear-gradient(to bottom, ${colors.primary}, ${colors.secondary});
     border-radius: 2px;
   }
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const MenuButton = styled.button`
@@ -185,9 +215,18 @@ const MenuButton = styled.button`
   color: ${colors.text.primary};
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
   
-  @media (max-width: 768px) {
-    display: block;
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
